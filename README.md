@@ -16,5 +16,5 @@ Prompt D: Created about.html in templates folder
                           Lines 17 - 20: h1, h2, p tags added to display about us information.
                           Line 21: Button with link added to navigate to mainscreen.html
           Created AboutController.java in controllers
-                          AboutController class was created to map to about.html
+                          AboutController class was created to map to about.html 
           mainscreen.html Line 91: Button with link added to navigate to about.html

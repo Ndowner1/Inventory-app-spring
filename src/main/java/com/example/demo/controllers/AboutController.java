@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 public class AboutController {
     @GetMapping("/about")
     public String showAboutPage() {
+
         return "about.html";
     }
 }
