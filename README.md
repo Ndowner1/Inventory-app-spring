@@ -60,3 +60,5 @@ Prompt G:
     AddOutsourcedPartController.java Line 6: Imported exception class
             Line 44-57 : Added try catch statements to display error if inv was below miniInv or above maxInv.
     EnufPartsValidator.java Line 36: Updated if statement to account for the 1 part used for the product will put the total parts below the minimum.
+
+Prompt I: PartTest.java Lines 159-176. Added Unit tests for minInv and maxInv fields.
