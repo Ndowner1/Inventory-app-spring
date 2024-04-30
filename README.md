@@ -18,3 +18,9 @@ Prompt D: Created about.html in templates folder
           Created AboutController.java in controllers
                           AboutController class was created to map to about.html 
           mainscreen.html Line 91: Button with link added to navigate to about.html
+
+Prompt E: BootStrapData.java Line 43- 145 Previous sample parts inventory                                   replaced with inventory of client. Total of 5                               parts, with null values accounted for in if                                 else statements when parts are searched                                     through repository. Repository is checked to                                be empty (43) before adding.
+            BootStrapData.java Line 147 - 169 Sample products inventory                         replaced with product inventory of client.                      Total of 5 product objects created,                             accompanied with save statements to the                         repository. Repository is checked to be empty                   (147) before adding.
+            BootStrapData.java Line 41-42 Created a productCount and                            partCount variable to track if the repository                   is empty before adding sample parts and                         products.
+            
+
