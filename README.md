@@ -52,5 +52,5 @@ Prompt G:
     BootStrapData.java Lines 52-53, 73-74, 93-94, 115-116, 136-137. setMinInv and           setMaxInv were called on each of the created objects to have a                 value. 
     application.properties: line 6 url was changed from                                     jbdc:h2:file:~/spring-boot-h2-db102 to jbdc:h2:file:~/new-storage
     AddOutsourcedPartController.java: Lines 43 to 56. checkRange() method used to           ensure that inv is between minInv and maxInv values or be                   redirected to the rangeError.html page preventing the part from             being added into the repo.
-    AddInhousePartController.java: Lines 42 to 56. checkRange() method used to              ensure that inv is between minInv and maxInv values or be                   redirected to the rangeError.html page preventing the part from             being added into the repo.
+    AddInhousePartController.java: Lines 42 to 56. checkRange() method used to              ensure that inv is between minInv and maxInv values or be                   redirected to the rangeError.html page preventing the part from             being added into the repo
     
