@@ -49,6 +49,8 @@ public class BootStrapData implements CommandLineRunner {
             wings.setInv(20);
             wings.setPrice(10000.0);
             wings.setId(100L);
+            wings.setMinInv(0);
+            wings.setMaxInv(40);
             outsourcedPartRepository.save(wings);
             OutsourcedPart thePart = null;
             List<OutsourcedPart> outsourcedParts = (List<OutsourcedPart>) outsourcedPartRepository.findAll();
@@ -68,6 +70,8 @@ public class BootStrapData implements CommandLineRunner {
             engine.setInv(20);
             engine.setPrice(10000.0);
             engine.setId(101L);
+            engine.setMinInv(0);
+            engine.setMaxInv(40);
             outsourcedPartRepository.save(engine);
             OutsourcedPart thePart1 = null;
             outsourcedParts = (List<OutsourcedPart>) outsourcedPartRepository.findAll();
@@ -86,6 +90,8 @@ public class BootStrapData implements CommandLineRunner {
             navigationSystem.setInv(20);
             navigationSystem.setPrice(10000.0);
             navigationSystem.setId(102L);
+            navigationSystem.setMinInv(0);
+            navigationSystem.setMaxInv(40);
             outsourcedPartRepository.save(navigationSystem);
             OutsourcedPart thePart2 = null;
             outsourcedParts = (List<OutsourcedPart>) outsourcedPartRepository.findAll();
@@ -106,6 +112,8 @@ public class BootStrapData implements CommandLineRunner {
             gasTank.setInv(20);
             gasTank.setPrice(10000.0);
             gasTank.setId(103L);
+            gasTank.setMinInv(0);
+            gasTank.setMaxInv(40);
             outsourcedPartRepository.save(gasTank);
             OutsourcedPart thePart3 = null;
             outsourcedParts = (List<OutsourcedPart>) outsourcedPartRepository.findAll();
@@ -125,6 +133,8 @@ public class BootStrapData implements CommandLineRunner {
             tail.setInv(20);
             tail.setPrice(10000.0);
             tail.setId(104L);
+            tail.setMinInv(0);
+            tail.setMaxInv(40);
             outsourcedPartRepository.save(tail);
             OutsourcedPart thePart4 = null;
             outsourcedParts = (List<OutsourcedPart>) outsourcedPartRepository.findAll();

@@ -40,4 +40,17 @@ Prompt F: Generated confirmationBuyNow.html Lines 1 - 23 to show a success page 
 
   AddProductController.java: Lines 176 - 190. Added the buyNow method to map HTTP Post requests. It locates the product with its id and runs in response to the boolean return from inStock(). Inventory is read and then saved to the repository by getting the ProductServiceImpl service thru a bean and then redirects to confirmationBuyNow html if successful and failedBuyNow html if unsuccessful.
             
-
+Prompt G: 
+    rangeError.html: Lines 1-23 Created a rangeError.html page that will show if            inventory is not within the range for Inhouse and OutSourced part           forms.
+    Part.java: Lines 31-34 added minInv and maxInv fields to note minimum and               maximum inventory. Jakarta bean validation was used to make sure                minInv is not lower than 0.
+                Lines 56-82 Added a constructor that will initialize an object with the minInv and maxInv fields. Getter and Setter methods were also added to read and set minInv and maxInv fields.
+                Lines 127-135 A checkRange() method was created to return a boolean based on if inv is within the range of minInv and maxInv.
+    OutsourcedPartForm.html: Lines 27-32 : Input fields for minInv and maxInv were          added to OutSourcedPartForm html. 
+    InhousePartForm.html: 26-31 : Input fields for minInv and maxInx were added to          InhousePartForm html.
+    mainscreen.html: Lines 38-39 table headers added for Maximum and Minimum                    inventory headings
+                    Lines 49-50 table headers added to display values for Maximum and minimum inventory
+    BootStrapData.java Lines 52-53, 73-74, 93-94, 115-116, 136-137. setMinInv and           setMaxInv were called on each of the created objects to have a                 value. 
+    application.properties: line 6 url was changed from                                     jbdc:h2:file:~/spring-boot-h2-db102 to jbdc:h2:file:~/new-storage
+    AddOutsourcedPartController.java: Lines 43 to 56. checkRange() method used to           ensure that inv is between minInv and maxInv values or be                   redirected to the rangeError.html page preventing the part from             being added into the repo.
+    AddInhousePartController.java: Lines 42 to 56. checkRange() method used to              ensure that inv is between minInv and maxInv values or be                   redirected to the rangeError.html page preventing the part from             being added into the repo.
+    
