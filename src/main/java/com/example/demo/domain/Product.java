@@ -104,4 +104,15 @@ public class Product implements Serializable {
     public int hashCode() {
         return (int) (id ^ (id >>> 32));
     }
-}
+
+    public boolean inStock(){
+        if(this.inv > 0) {
+            this.inv --;
+            return true;}
+
+            return false;
+
+        }
+
+    }
+

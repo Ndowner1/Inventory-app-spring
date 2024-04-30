@@ -173,4 +173,19 @@ public class AddProductController {
         theModel.addAttribute("availparts",availParts);
         return "productForm";
     }
+    @PostMapping ("/buyNow")
+    public String buyNow(@RequestParam("productID") int productId, Model theModel) {
+        ProductService repo = context.getBean(ProductServiceImpl.class);
+        Product theProduct = repo.findById(productId);
+        product1 = theProduct;
+
+        if(product1.inStock()) {
+            product1.getInv();
+            repo.save(product1);
+            return "confirmationBuyNow";
+        }
+
+        return "failedBuyNow";
+
+    }
 }
