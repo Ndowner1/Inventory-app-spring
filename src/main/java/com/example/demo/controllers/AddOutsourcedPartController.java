@@ -3,6 +3,7 @@ package com.example.demo.controllers;
 import com.example.demo.domain.InhousePart;
 import com.example.demo.domain.OutsourcedPart;
 import com.example.demo.domain.Part;
+import com.example.demo.exceptions.AboveMaxBelowMinException;
 import com.example.demo.service.OutsourcedPartService;
 import com.example.demo.service.OutsourcedPartServiceImpl;
 import com.example.demo.service.PartService;
@@ -40,6 +41,20 @@ public class AddOutsourcedPartController {
     @PostMapping("/showFormAddOutPart")
     public String submitForm(@Valid @ModelAttribute("outsourcedpart") OutsourcedPart part, BindingResult bindingResult, Model theModel){
         theModel.addAttribute("outsourcedpart",part);
+        try {
+            if (part.getInv() < part.getMinInv()) {
+                throw new AboveMaxBelowMinException("Inventory cannot be less than the min");
+            }
+            ;
+            if (part.getInv() > part.getMaxInv()) {
+                throw new AboveMaxBelowMinException("Inventory updated cannot be greater than the max");
+            }
+            ;
+        }
+        catch (AboveMaxBelowMinException e) {
+            theModel.addAttribute("errorMessage",e.getMessage());
+            return "rangeError";
+        }
         if (part.checkRange() == false) {
             return "rangeError";
 

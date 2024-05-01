@@ -53,4 +53,10 @@ Prompt G:
     application.properties: line 6 url was changed from                                     jbdc:h2:file:~/spring-boot-h2-db102 to jbdc:h2:file:~/new-storage
     AddOutsourcedPartController.java: Lines 43 to 56. checkRange() method used to           ensure that inv is between minInv and maxInv values or be                   redirected to the rangeError.html page preventing the part from             being added into the repo.
     AddInhousePartController.java: Lines 42 to 56. checkRange() method used to              ensure that inv is between minInv and maxInv values or be                   redirected to the rangeError.html page preventing the part from             being added into the repo
-    
+  Prompt H: rangeError.html Line 18: Added thymeleaf attribute to display   dynamic error message   
+            AboveMaxBelowMinException.java Lines 1-8. Created Exception class to be thrown for AddInhousePartController and AddOutsourcedPartController to display error messages.
+    AddInhousePartController.java Line 5: Imported exception class
+                                    Line 43-55 : Added try catch statements to display error if inv was below miniInv or above maxInv.
+    AddOutsourcedPartController.java Line 6: Imported exception class
+            Line 44-57 : Added try catch statements to display error if inv was below miniInv or above maxInv.
+    EnufPartsValidator.java Line 36: Updated if statement to account for the 1 part used for the product will put the total parts below the minimum.

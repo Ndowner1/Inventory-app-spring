@@ -2,6 +2,7 @@ package com.example.demo.controllers;
 
 import com.example.demo.domain.InhousePart;
 import com.example.demo.domain.Part;
+import com.example.demo.exceptions.AboveMaxBelowMinException;
 import com.example.demo.service.InhousePartService;
 import com.example.demo.service.InhousePartServiceImpl;
 import com.example.demo.service.PartService;
@@ -39,6 +40,19 @@ public class AddInhousePartController{
     @PostMapping("/showFormAddInPart")
     public String submitForm(@Valid @ModelAttribute("inhousepart") InhousePart part, BindingResult theBindingResult, Model theModel){
         theModel.addAttribute("inhousepart",part);
+        try {
+            if (part.getInv() < part.getMinInv()) {
+                throw new AboveMaxBelowMinException("Inventory cannot be less than the minimum Inventory entered");
+            }
+            ;
+            if (part.getInv() > part.getMaxInv()) {
+                throw new AboveMaxBelowMinException("Inventory updated cannot be greater than the maximum Inventory entered");
+            }
+            ;
+        }
+        catch (AboveMaxBelowMinException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
         if (part.checkRange() == false) {
              return "rangeError";
 
